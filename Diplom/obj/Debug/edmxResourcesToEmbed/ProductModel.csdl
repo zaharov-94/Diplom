@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WholesaleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="clientID" />
+    </Key>
+    <Property Name="clientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contactName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="adress" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Contracts" Relationship="Self.FK_Contracts_Clients" FromRole="Clients" ToRole="Contracts" />
+  </EntityType>
+  <EntityType Name="ContractProducts">
+    <Key>
+      <PropertyRef Name="contractID" />
+      <PropertyRef Name="productID" />
+      <PropertyRef Name="deliveryID" />
+    </Key>
+    <Property Name="contractID" Type="Int32" Nullable="false" />
+    <Property Name="productID" Type="Int32" Nullable="false" />
+    <Property Name="deliveryID" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Contracts" Relationship="Self.FK_ContractProducts_Contracts" FromRole="ContractProducts" ToRole="Contracts" />
+    <NavigationProperty Name="ProductDeliveries" Relationship="Self.FK_ContractProducts_ProductDeliveries" FromRole="ContractProducts" ToRole="ProductDeliveries" />
+  </EntityType>
+  <EntityType Name="Contracts">
+    <Key>
+      <PropertyRef Name="contractID" />
+    </Key>
+    <Property Name="contractID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="clientID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK_Contracts_Clients" FromRole="Contracts" ToRole="Clients" />
+    <NavigationProperty Name="ContractProducts" Relationship="Self.FK_ContractProducts_Contracts" FromRole="Contracts" ToRole="ContractProducts" />
+  </EntityType>
+  <EntityType Name="Deliveries">
+    <Key>
+      <PropertyRef Name="deliveryID" />
+    </Key>
+    <Property Name="deliveryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <NavigationProperty Name="ProductDeliveries" Relationship="Self.FK_ProductDeliveries_Deliveries" FromRole="Deliveries" ToRole="ProductDeliveries" />
+  </EntityType>
+  <EntityType Name="ProductDeliveries">
+    <Key>
+      <PropertyRef Name="deliveryID" />
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="deliveryID" Type="Int32" Nullable="false" />
+    <Property Name="productID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ContractProducts" Relationship="Self.FK_ContractProducts_ProductDeliveries" FromRole="ProductDeliveries" ToRole="ContractProducts" />
+    <NavigationProperty Name="Deliveries" Relationship="Self.FK_ProductDeliveries_Deliveries" FromRole="ProductDeliveries" ToRole="Deliveries" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_ProductDeliveries_Products" FromRole="ProductDeliveries" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <NavigationProperty Name="ProductDeliveries" Relationship="Self.FK_ProductDeliveries_Products" FromRole="Products" ToRole="ProductDeliveries" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Contracts_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="clientID" />
+      </Principal>
+      <Dependent Role="Contracts">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractProducts_Contracts">
+    <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
+    <End Role="ContractProducts" Type="Self.ContractProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="contractID" />
+      </Principal>
+      <Dependent Role="ContractProducts">
+        <PropertyRef Name="contractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractProducts_ProductDeliveries">
+    <End Role="ProductDeliveries" Type="Self.ProductDeliveries" Multiplicity="1" />
+    <End Role="ContractProducts" Type="Self.ContractProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDeliveries">
+        <PropertyRef Name="deliveryID" />
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="ContractProducts">
+        <PropertyRef Name="deliveryID" />
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDeliveries_Deliveries">
+    <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="1" />
+    <End Role="ProductDeliveries" Type="Self.ProductDeliveries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deliveries">
+        <PropertyRef Name="deliveryID" />
+      </Principal>
+      <Dependent Role="ProductDeliveries">
+        <PropertyRef Name="deliveryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDeliveries_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ProductDeliveries" Type="Self.ProductDeliveries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="ProductDeliveries">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WholesaleEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="ContractProducts" EntityType="Self.ContractProducts" />
+    <EntitySet Name="Contracts" EntityType="Self.Contracts" />
+    <EntitySet Name="Deliveries" EntityType="Self.Deliveries" />
+    <EntitySet Name="ProductDeliveries" EntityType="Self.ProductDeliveries" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Contracts_Clients" Association="Self.FK_Contracts_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Contracts" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractProducts_Contracts" Association="Self.FK_ContractProducts_Contracts">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="ContractProducts" EntitySet="ContractProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractProducts_ProductDeliveries" Association="Self.FK_ContractProducts_ProductDeliveries">
+      <End Role="ProductDeliveries" EntitySet="ProductDeliveries" />
+      <End Role="ContractProducts" EntitySet="ContractProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDeliveries_Deliveries" Association="Self.FK_ProductDeliveries_Deliveries">
+      <End Role="Deliveries" EntitySet="Deliveries" />
+      <End Role="ProductDeliveries" EntitySet="ProductDeliveries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDeliveries_Products" Association="Self.FK_ProductDeliveries_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductDeliveries" EntitySet="ProductDeliveries" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

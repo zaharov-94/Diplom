@@ -1,0 +1,26 @@
+c:\users\oleg dovzhenko\documents\visual studio 2015\Projects\Training\Training\bin\Debug\Training.exe.config
+D:\projects\Training\Training\bin\Debug\Training.exe.config
+D:\Documents\Projects\TrainingShit\Training\bin\Debug\Training.exe.config
+D:\Documents\Projects\TrainingShit — копия\Training\bin\Debug\Training.exe.config
+D:\Documents\Projects\TrainingShit — копия\Training\bin\Debug\Training.exe
+D:\Documents\Projects\TrainingShit — копия\Training\bin\Debug\Training.pdb
+D:\Documents\Projects\TrainingShit — копия\Training\obj\Debug\Training.csprojResolveAssemblyReference.cache
+D:\Documents\Projects\TrainingShit — копия\Training\obj\Debug\Training.Form1.resources
+D:\Documents\Projects\TrainingShit — копия\Training\obj\Debug\Training.Properties.Resources.resources
+D:\Documents\Projects\TrainingShit — копия\Training\obj\Debug\Training.csproj.GenerateResource.Cache
+D:\Documents\Projects\TrainingShit — копия\Training\obj\Debug\Training.exe
+D:\Documents\Projects\TrainingShit — копия\Training\obj\Debug\Training.pdb
+D:\Documents\Projects\TrainingShit\Training\obj\Debug\Training.exe
+D:\Documents\Projects\TrainingShit\Training\obj\Debug\Training.pdb
+D:\Documents\Projects\TrainingShit\Training\bin\Debug\Training.exe
+D:\Documents\Projects\TrainingShit\Training\bin\Debug\Training.pdb
+D:\Documents\Projects\TrainingShit\Training\obj\Debug\Training.Properties.Resources.resources
+D:\Documents\Projects\TrainingShit\Training\obj\Debug\Training.csproj.GenerateResource.Cache
+D:\Documents\Projects\TrainingShit\Training\obj\Debug\Training.mainForm.resources
+D:\Documents\Projects\TrainingShit\Training\bin\Debug\EntityFramework.dll
+D:\Documents\Projects\TrainingShit\Training\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documents\Projects\TrainingShit\Training\bin\Debug\EntityFramework.xml
+D:\Documents\Projects\TrainingShit\Training\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documents\Projects\TrainingShit\Training\bin\Debug\ru\EntityFramework.resources.dll
+D:\Documents\Projects\TrainingShit\Training\obj\Debug\Training.csprojResolveAssemblyReference.cache
+D:\Documents\Projects\TrainingShit\Training\obj\Debug\Training.csproj.ResolveComReference.cache

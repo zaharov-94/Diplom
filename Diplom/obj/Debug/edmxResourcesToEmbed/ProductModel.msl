@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище WholesaleModelContainer" CdmEntityContainer="WholesaleEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="WholesaleModel.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="contactName" ColumnName="contactName" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractProducts">
+      <EntityTypeMapping TypeName="WholesaleModel.ContractProducts">
+        <MappingFragment StoreEntitySet="ContractProducts">
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="deliveryID" ColumnName="deliveryID" />
+          <ScalarProperty Name="count" ColumnName="count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracts">
+      <EntityTypeMapping TypeName="WholesaleModel.Contracts">
+        <MappingFragment StoreEntitySet="Contracts">
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deliveries">
+      <EntityTypeMapping TypeName="WholesaleModel.Deliveries">
+        <MappingFragment StoreEntitySet="Deliveries">
+          <ScalarProperty Name="deliveryID" ColumnName="deliveryID" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductDeliveries">
+      <EntityTypeMapping TypeName="WholesaleModel.ProductDeliveries">
+        <MappingFragment StoreEntitySet="ProductDeliveries">
+          <ScalarProperty Name="deliveryID" ColumnName="deliveryID" />
+          <ScalarProperty Name="productID" ColumnName="productID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="WholesaleModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="WholesaleModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

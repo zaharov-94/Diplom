@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище WholesaleModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="clientID" />
+    </Key>
+    <Property Name="clientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phoneNumber" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="contactName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="adress" Type="varchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContractProducts">
+    <Key>
+      <PropertyRef Name="contractID" />
+      <PropertyRef Name="productID" />
+      <PropertyRef Name="deliveryID" />
+    </Key>
+    <Property Name="contractID" Type="int" Nullable="false" />
+    <Property Name="productID" Type="int" Nullable="false" />
+    <Property Name="deliveryID" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contracts">
+    <Key>
+      <PropertyRef Name="contractID" />
+    </Key>
+    <Property Name="contractID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="clientID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deliveries">
+    <Key>
+      <PropertyRef Name="deliveryID" />
+    </Key>
+    <Property Name="deliveryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductDeliveries">
+    <Key>
+      <PropertyRef Name="deliveryID" />
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="deliveryID" Type="int" Nullable="false" />
+    <Property Name="productID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="price" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_ContractProducts_Contracts">
+    <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
+    <End Role="ContractProducts" Type="Self.ContractProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="contractID" />
+      </Principal>
+      <Dependent Role="ContractProducts">
+        <PropertyRef Name="contractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractProducts_ProductDeliveries">
+    <End Role="ProductDeliveries" Type="Self.ProductDeliveries" Multiplicity="1" />
+    <End Role="ContractProducts" Type="Self.ContractProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDeliveries">
+        <PropertyRef Name="deliveryID" />
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="ContractProducts">
+        <PropertyRef Name="deliveryID" />
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contracts_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="clientID" />
+      </Principal>
+      <Dependent Role="Contracts">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDeliveries_Deliveries">
+    <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="1" />
+    <End Role="ProductDeliveries" Type="Self.ProductDeliveries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deliveries">
+        <PropertyRef Name="deliveryID" />
+      </Principal>
+      <Dependent Role="ProductDeliveries">
+        <PropertyRef Name="deliveryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDeliveries_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ProductDeliveries" Type="Self.ProductDeliveries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="ProductDeliveries">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище WholesaleModelContainer">
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContractProducts" EntityType="Self.ContractProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contracts" EntityType="Self.Contracts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deliveries" EntityType="Self.Deliveries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductDeliveries" EntityType="Self.ProductDeliveries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ContractProducts_Contracts" Association="Self.FK_ContractProducts_Contracts">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="ContractProducts" EntitySet="ContractProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractProducts_ProductDeliveries" Association="Self.FK_ContractProducts_ProductDeliveries">
+      <End Role="ProductDeliveries" EntitySet="ProductDeliveries" />
+      <End Role="ContractProducts" EntitySet="ContractProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contracts_Clients" Association="Self.FK_Contracts_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Contracts" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDeliveries_Deliveries" Association="Self.FK_ProductDeliveries_Deliveries">
+      <End Role="Deliveries" EntitySet="Deliveries" />
+      <End Role="ProductDeliveries" EntitySet="ProductDeliveries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDeliveries_Products" Association="Self.FK_ProductDeliveries_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductDeliveries" EntitySet="ProductDeliveries" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
