@@ -34,15 +34,17 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBoxSupply = new System.Windows.Forms.PictureBox();
             this.pictureBoxCatalog = new System.Windows.Forms.PictureBox();
             this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.pictureBoxReport = new System.Windows.Forms.PictureBox();
             this.pictureBoxOrder = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBoxMinimize = new System.Windows.Forms.PictureBox();
             this.statusStrip.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSupply)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCatalog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReport)).BeginInit();
@@ -55,9 +57,9 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.toolStripStatus});
-            this.statusStrip.Location = new System.Drawing.Point(0, 280);
+            this.statusStrip.Location = new System.Drawing.Point(0, 279);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(691, 22);
+            this.statusStrip.Size = new System.Drawing.Size(700, 22);
             this.statusStrip.TabIndex = 4;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -73,21 +75,45 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBoxSupply);
             this.panel1.Controls.Add(this.pictureBoxCatalog);
             this.panel1.Controls.Add(this.pictureBoxHelp);
-            this.panel1.Controls.Add(this.splitter1);
             this.panel1.Controls.Add(this.pictureBoxReport);
             this.panel1.Controls.Add(this.pictureBoxOrder);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(76, 280);
+            this.panel1.Size = new System.Drawing.Size(90, 279);
             this.panel1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 317);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 40);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBoxSupply
+            // 
+            this.pictureBoxSupply.Image = global::Diplom.Properties.Resources.zakaz;
+            this.pictureBoxSupply.Location = new System.Drawing.Point(6, 64);
+            this.pictureBoxSupply.Name = "pictureBoxSupply";
+            this.pictureBoxSupply.Size = new System.Drawing.Size(61, 61);
+            this.pictureBoxSupply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSupply.TabIndex = 11;
+            this.pictureBoxSupply.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureBoxSupply, "Заказать поставку");
+            this.pictureBoxSupply.Click += new System.EventHandler(this.pictureBoxSupply_Click);
             // 
             // pictureBoxCatalog
             // 
             this.pictureBoxCatalog.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCatalog.Image")));
-            this.pictureBoxCatalog.Location = new System.Drawing.Point(2, 69);
+            this.pictureBoxCatalog.Location = new System.Drawing.Point(6, 128);
             this.pictureBoxCatalog.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxCatalog.Name = "pictureBoxCatalog";
             this.pictureBoxCatalog.Size = new System.Drawing.Size(62, 60);
@@ -103,7 +129,7 @@
             // pictureBoxHelp
             // 
             this.pictureBoxHelp.Image = global::Diplom.Properties.Resources.help;
-            this.pictureBoxHelp.Location = new System.Drawing.Point(3, 201);
+            this.pictureBoxHelp.Location = new System.Drawing.Point(4, 254);
             this.pictureBoxHelp.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxHelp.Name = "pictureBoxHelp";
             this.pictureBoxHelp.Size = new System.Drawing.Size(62, 60);
@@ -116,23 +142,10 @@
             this.pictureBoxHelp.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxHelp_MouseMove);
             this.pictureBoxHelp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxHelp_MouseUp);
             // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.splitter1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitter1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(71, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(5, 280);
-            this.splitter1.TabIndex = 9;
-            this.splitter1.TabStop = false;
-            this.splitter1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.splitter1_MouseMove);
-            // 
             // pictureBoxReport
             // 
             this.pictureBoxReport.Image = global::Diplom.Properties.Resources.report;
-            this.pictureBoxReport.Location = new System.Drawing.Point(3, 135);
+            this.pictureBoxReport.Location = new System.Drawing.Point(5, 191);
             this.pictureBoxReport.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxReport.Name = "pictureBoxReport";
             this.pictureBoxReport.Size = new System.Drawing.Size(62, 60);
@@ -150,7 +163,7 @@
             this.pictureBoxOrder.AccessibleDescription = "";
             this.pictureBoxOrder.ErrorImage = null;
             this.pictureBoxOrder.Image = global::Diplom.Properties.Resources.zakaz;
-            this.pictureBoxOrder.Location = new System.Drawing.Point(3, 9);
+            this.pictureBoxOrder.Location = new System.Drawing.Point(6, 9);
             this.pictureBoxOrder.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxOrder.Name = "pictureBoxOrder";
             this.pictureBoxOrder.Size = new System.Drawing.Size(62, 52);
@@ -167,7 +180,7 @@
             // pictureBoxMinimize
             // 
             this.pictureBoxMinimize.Image = global::Diplom.Properties.Resources.close;
-            this.pictureBoxMinimize.Location = new System.Drawing.Point(76, 129);
+            this.pictureBoxMinimize.Location = new System.Drawing.Point(92, 115);
             this.pictureBoxMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxMinimize.Name = "pictureBoxMinimize";
             this.pictureBoxMinimize.Size = new System.Drawing.Size(24, 24);
@@ -182,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 302);
+            this.ClientSize = new System.Drawing.Size(700, 301);
             this.Controls.Add(this.pictureBoxMinimize);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip);
@@ -190,7 +203,8 @@
             this.IsMdiContainer = true;
             this.MinimumSize = new System.Drawing.Size(700, 340);
             this.Name = "mainForm";
-            this.Text = "Ведение заказов";
+            this.Text = "Учет продаж";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResizeBegin += new System.EventHandler(this.Form1_ResizeBegin);
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
@@ -198,6 +212,7 @@
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSupply)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCatalog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReport)).EndInit();
@@ -214,13 +229,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxOrder;
         private System.Windows.Forms.PictureBox pictureBoxReport;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.PictureBox pictureBoxHelp;
         private System.Windows.Forms.PictureBox pictureBoxCatalog;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatus;
         private System.Windows.Forms.PictureBox pictureBoxMinimize;
+        private System.Windows.Forms.PictureBox pictureBoxSupply;
+        private System.Windows.Forms.Button button1;
 
     }
 }

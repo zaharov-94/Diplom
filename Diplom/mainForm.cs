@@ -22,7 +22,7 @@ namespace Diplom
         {
             InitializeComponent();
             AppStart();
-            HelpInitialize();
+            HelpInitialize();            
         }
 
         private void HelpInitialize()
@@ -52,24 +52,17 @@ namespace Diplom
             w1 = this.Size.Width;
         }
 
-        private void splitter1_MouseMove(object sender, MouseEventArgs e)
-        {
-            pictureBoxCatalog.BorderStyle = BorderStyle.None;
-            pictureBoxOrder.BorderStyle = BorderStyle.None;
-            pictureBoxHelp.BorderStyle = BorderStyle.None;
-            pictureBoxReport.BorderStyle = BorderStyle.None;
-        }
-       
         # region ButtonOrder
 
             private void pictureBoxOrder_Click(object sender, EventArgs e)
             {
+                this.toolStripStatusLabel.Text = "Загрузка формы...";
+                this.Refresh();
                 foreach (Form form in this.MdiChildren)
                     form.Close();
-                Order o = new Order();
+                formOrder o = new formOrder();
                 o.MdiParent = this;
-                
-                /*if (f == false) {*/ o.Show(); //f = true; }
+                o.Show();
             }
 
             private void pictureBoxOrder_MouseMove(object sender, MouseEventArgs e)
@@ -100,7 +93,13 @@ namespace Diplom
 
             private void pictureBoxReport_Click(object sender, EventArgs e)
             {
-               // tabControlMain.SelectTab("tabPageReport");
+                this.toolStripStatusLabel.Text = "Загрузка формы...";
+                this.Refresh();
+                foreach (Form form in this.MdiChildren)
+                    form.Close();
+                formReport r = new formReport();
+                r.MdiParent = this;
+                r.Show();
             }
 
             private void pictureBoxReport_MouseMove(object sender, MouseEventArgs e)
@@ -130,12 +129,13 @@ namespace Diplom
         #region ButtonHelp
             private void pictureBoxHelp_Click(object sender, EventArgs e)
             {
+                this.toolStripStatusLabel.Text = "Загрузка формы...";
+                this.Refresh();
                 foreach (Form form in this.MdiChildren)
                     form.Close();
                 Help h = new Help();
                 h.MdiParent = this;
-                    /*if (f == false) {*/ h.Show(); //f = true; }
-                //tabControlMain.SelectTab("tabPageHelp");
+                h.Show();
             }
 
             private void pictureBoxHelp_MouseMove(object sender, MouseEventArgs e)
@@ -166,7 +166,13 @@ namespace Diplom
         #region Catalog
             private void pictureBoxCatalog_Click(object sender, EventArgs e)
             {
-                //tabControlMain.SelectTab("tabPageCatalog");
+                this.toolStripStatusLabel.Text = "Загрузка формы...";
+                this.Refresh();
+                foreach (Form form in this.MdiChildren)
+                    form.Close();
+                Catalogs c = new Catalogs();
+                c.MdiParent = this;
+                c.Show();
             }
         
             private void pictureBoxCatalog_MouseMove(object sender, MouseEventArgs e)
@@ -193,6 +199,20 @@ namespace Diplom
             }
         #endregion
 
+        #region Supply
+            private void pictureBoxSupply_Click(object sender, EventArgs e)
+            {
+                this.toolStripStatusLabel.Text = "Загрузка формы...";
+                this.Refresh();
+                foreach (Form form in this.MdiChildren)
+                    form.Close();
+                formSupply s = new formSupply();
+                s.MdiParent = this;
+                s.Show();
+            }
+        
+        #endregion
+
         #region MinimizePanel
             private void MouseClick1()
             {
@@ -201,7 +221,7 @@ namespace Diplom
                 //tabControlMain.Location = new Point(7, 0);
                 //tabControlMain.Width = w1-22;
                 //Information.Width = w1 - 180;
-                pictureBoxMinimize.Location = new Point(0, panel1.Height / 2 - 12);
+                pictureBoxMinimize.Location = new Point(0, this.Height / 2 - 55);
                 pictureBoxMinimize.Image = Properties.Resources.open;
                 toolTip.SetToolTip(pictureBoxMinimize, "Отобразить");
             }
@@ -213,7 +233,7 @@ namespace Diplom
                 //tabControlMain.Location = new Point(91, 0);
                 //tabControlMain.Width = w1-106;
                 //Information.Width = w1 - 264;
-                pictureBoxMinimize.Location = new Point(80, panel1.Height / 2 - 12);
+                pictureBoxMinimize.Location = new Point(92, this.Height / 2 - 55);
                 pictureBoxMinimize.Image = Properties.Resources.close;
                 toolTip.SetToolTip(pictureBoxMinimize, "Скрыть");
             }
@@ -279,10 +299,21 @@ namespace Diplom
         {
             Home h = new Home();
             h.MdiParent = this;
-            if (f == false) { h.Show(); f = true; }
+            h.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+                    form.Close();
+            formSupplyEx o = new formSupplyEx();
+            o.MdiParent = this;
+            o.Show();
+        }
 
-
+        private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

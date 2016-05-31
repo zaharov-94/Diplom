@@ -21,6 +21,7 @@ namespace Diplom
         {
             this.ShowIcon = false;
             this.WindowState = FormWindowState.Maximized;
+            ((mainForm)MdiParent).toolStripStatusLabel.Text = "Готово";
         }
     }
 }

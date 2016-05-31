@@ -26,10 +26,10 @@ namespace Diplom.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\v11.0;Initial Catalog=Wholesale;Integrated Security=True")]
-        public string WholesaleConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\v11.0;Initial Catalog=Diplom;Integrated Security=True")]
+        public string DiplomConnectionString {
             get {
-                return ((string)(this["WholesaleConnectionString"]));
+                return ((string)(this["DiplomConnectionString"]));
             }
         }
     }

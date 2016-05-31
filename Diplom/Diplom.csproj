@@ -60,6 +60,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogs.Designer.cs">
+      <DependentUpon>Catalogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Context.cs" />
+    <Compile Include="DataSetReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DiplomDataSet.cs">
+      <DependentUpon>DiplomDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DiplomDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiplomDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="formReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formReport.Designer.cs">
+      <DependentUpon>formReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formSupplyEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSupplyEx.Designer.cs">
+      <DependentUpon>formSupplyEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formOrderEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formOrderEx.Designer.cs">
+      <DependentUpon>formOrderEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formSupply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSupply.Designer.cs">
+      <DependentUpon>formSupply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formOrder.Designer.cs">
+      <DependentUpon>formOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAuthorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAuthorization.Designer.cs">
+      <DependentUpon>formAuthorization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Help.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,14 +136,43 @@
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HelpPage.cs" />
-    <Compile Include="Order.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\SupplyProduct.cs" />
+    <Compile Include="Models\Supply.cs" />
+    <Compile Include="Models\Provider.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderProduct.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Catalogs.resx">
+      <DependentUpon>Catalogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formReport.resx">
+      <DependentUpon>formReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSupplyEx.resx">
+      <DependentUpon>formSupplyEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formOrderEx.resx">
+      <DependentUpon>formOrderEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSupply.resx">
+      <DependentUpon>formSupply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formOrder.resx">
+      <DependentUpon>formOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAuthorization.resx">
+      <DependentUpon>formAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,9 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Order.resx">
-      <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -109,21 +192,60 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Reports\Report4.rdlc" />
+    <EmbeddedResource Include="Reports\Report3.rdlc" />
+    <EmbeddedResource Include="Reports\Report2.rdlc" />
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Report5.rdlc" />
+    <None Include="DataSetReports.xsc">
+      <DependentUpon>DataSetReports.xsd</DependentUpon>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <None Include="DataSetReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetReports.xss">
+      <DependentUpon>DataSetReports.xsd</DependentUpon>
+    </None>
+    <None Include="DiplomDataSet.xsc">
+      <DependentUpon>DiplomDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DiplomDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DiplomDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DiplomDataSet.xss">
+      <DependentUpon>DiplomDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\Catalogs.datasource" />
+    <None Include="Properties\DataSources\Diplom.DataAccess.Context.datasource" />
+    <None Include="Properties\DataSources\Diplom.Models.Client.datasource" />
+    <None Include="Properties\DataSources\Diplom.Models.Employee.datasource" />
+    <None Include="Properties\DataSources\Diplom.Models.Order.datasource" />
+    <None Include="Properties\DataSources\Diplom.Models.OrderProduct.datasource" />
+    <None Include="Properties\DataSources\Diplom.Models.Product.datasource" />
+    <None Include="Properties\DataSources\Diplom.Models.Provider.datasource" />
+    <None Include="Properties\DataSources\Diplom.Models.Supply.datasource" />
+    <None Include="Properties\DataSources\Diplom.Models.SupplyProduct.datasource" />
+    <None Include="Properties\DataSources\Diplom.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Diplom.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Help.datasource" />
+    <None Include="Properties\DataSources\HelpPage.datasource" />
+    <None Include="Properties\DataSources\Home.datasource" />
+    <None Include="Properties\DataSources\mainForm.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Icons\help2.png" />
     <None Include="Resources\Icons\catalogue.png" />
     <None Include="Resources\Icons\zakaz.png" />
