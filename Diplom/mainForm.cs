@@ -60,7 +60,7 @@ namespace Diplom
                 this.Refresh();
                 foreach (Form form in this.MdiChildren)
                     form.Close();
-                formOrder o = new formOrder();
+                formOrderEx o = new formOrderEx();
                 o.MdiParent = this;
                 o.Show();
             }
@@ -70,6 +70,8 @@ namespace Diplom
                 pictureBoxCatalog.BorderStyle = BorderStyle.None;
                 pictureBoxReport.BorderStyle = BorderStyle.None;
                 pictureBoxHelp.BorderStyle = BorderStyle.None;
+                pictureBoxSupply.BorderStyle = BorderStyle.None;
+                pictureBoxHome.BorderStyle = BorderStyle.None;
                 pictureBoxOrder.BorderStyle = BorderStyle.FixedSingle;
             }
 
@@ -107,6 +109,8 @@ namespace Diplom
                 pictureBoxCatalog.BorderStyle = BorderStyle.None;
                 pictureBoxOrder.BorderStyle = BorderStyle.None;
                 pictureBoxHelp.BorderStyle = BorderStyle.None;
+                pictureBoxSupply.BorderStyle = BorderStyle.None;
+                pictureBoxHome.BorderStyle = BorderStyle.None;
                 pictureBoxReport.BorderStyle = BorderStyle.FixedSingle;
             }
 
@@ -143,6 +147,8 @@ namespace Diplom
                 pictureBoxCatalog.BorderStyle = BorderStyle.None;
                 pictureBoxReport.BorderStyle = BorderStyle.None;
                 pictureBoxOrder.BorderStyle = BorderStyle.None;
+                pictureBoxSupply.BorderStyle = BorderStyle.None;
+                pictureBoxHome.BorderStyle = BorderStyle.None;
                 pictureBoxHelp.BorderStyle = BorderStyle.FixedSingle;
             }
 
@@ -180,6 +186,8 @@ namespace Diplom
                 pictureBoxOrder.BorderStyle = BorderStyle.None;
                 pictureBoxReport.BorderStyle = BorderStyle.None;
                 pictureBoxHelp.BorderStyle = BorderStyle.None;
+                pictureBoxSupply.BorderStyle = BorderStyle.None;
+                pictureBoxHome.BorderStyle = BorderStyle.None;
                 pictureBoxCatalog.BorderStyle = BorderStyle.FixedSingle;
             }
 
@@ -206,9 +214,9 @@ namespace Diplom
                 this.Refresh();
                 foreach (Form form in this.MdiChildren)
                     form.Close();
-                formSupply s = new formSupply();
-                s.MdiParent = this;
-                s.Show();
+                formSupplyEx o = new formSupplyEx();
+                o.MdiParent = this;
+                o.Show();
             }
         
         #endregion
@@ -304,16 +312,73 @@ namespace Diplom
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (Form form in this.MdiChildren)
-                    form.Close();
-            formSupplyEx o = new formSupplyEx();
-            o.MdiParent = this;
-            o.Show();
+            
         }
 
         private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBoxHome_Click(object sender, EventArgs e)
+        {
+            this.toolStripStatusLabel.Text = "Загрузка формы...";
+            this.Refresh();
+            foreach (Form form in this.MdiChildren)
+                form.Close();
+            Home h = new Home();
+            h.MdiParent = this;
+            h.Show();
+        }
+
+        private void pictureBoxHome_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBoxHome.Image = Properties.Resources.homeClick;
+        }
+
+        private void pictureBoxHome_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBoxHome.Image = Properties.Resources.home;
+        }
+
+        private void pictureBoxSupply_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBoxSupply.Image = Properties.Resources.saleClick;
+        }
+
+        private void pictureBoxSupply_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBoxSupply.Image = Properties.Resources.sale;
+        }
+
+        private void pictureBoxSupply_MouseMove(object sender, MouseEventArgs e)
+        {
+            pictureBoxOrder.BorderStyle = BorderStyle.None;
+            pictureBoxReport.BorderStyle = BorderStyle.None;
+            pictureBoxHelp.BorderStyle = BorderStyle.None;
+            pictureBoxHome.BorderStyle = BorderStyle.None;
+            pictureBoxCatalog.BorderStyle = BorderStyle.None;
+            pictureBoxSupply.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void pictureBoxSupply_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSupply.BorderStyle = BorderStyle.None;
+        }
+
+        private void pictureBoxHome_MouseMove(object sender, MouseEventArgs e)
+        {
+            pictureBoxOrder.BorderStyle = BorderStyle.None;
+            pictureBoxReport.BorderStyle = BorderStyle.None;
+            pictureBoxHelp.BorderStyle = BorderStyle.None;
+            pictureBoxCatalog.BorderStyle = BorderStyle.None;
+            pictureBoxSupply.BorderStyle = BorderStyle.None;
+            pictureBoxHome.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void pictureBoxHome_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxHome.BorderStyle = BorderStyle.None;
         }
     }
 }

@@ -21,31 +21,13 @@ namespace Diplom
 
         private void Home_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "diplomDataSet.Orders". При необходимости она может быть перемещена или удалена.
-            this.ordersTableAdapter.Fill(this.diplomDataSet.Orders);
-                        this.ShowIcon = false;
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSetReports.Ostatok". При необходимости она может быть перемещена или удалена.
+            this.ostatokTableAdapter.Fill(this.dataSetReports.Ostatok);
+            this.ShowIcon = false;
             this.WindowState = FormWindowState.Maximized;
+            ((mainForm)MdiParent).toolStripStatusLabel.Text = "Готово";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
-            var context = new Context();
-            context.clients.Load();
-            context.SaveChanges();
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in ((mainForm)MdiParent).MdiChildren)
-            {
-                if(form != this)
-                form.Close();
-            }
-            formOrderEx o = new formOrderEx();
-            o.MdiParent = (mainForm)MdiParent;
-            o.Show();
-        }
     }
 }

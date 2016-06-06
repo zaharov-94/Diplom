@@ -37,6 +37,7 @@ namespace Diplom
             dataGridView3.Columns[0].Visible = false;
             dataGridView1.Columns[0].Visible = false;
             dataGridView4.Columns[0].Visible = false;
+            pictureBoxClient.Image = Properties.Resources.client_cur;
             ((mainForm)MdiParent).toolStripStatusLabel.Text = "Готово";
         }
 
@@ -115,6 +116,74 @@ namespace Diplom
                 var ms = MessageBox.Show("Ошибка сохранения!", "Ошибка", MessageBoxButtons.OK);
             }
         }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl.SelectedIndex)
+            {
+                case 0: { pictureBoxClient.Image = Properties.Resources.client_cur; 
+                    pictureBoxProvider.Image = Properties.Resources.delivery_icon_co;
+                    pictureBoxProduct.Image = Properties.Resources.tovar;
+                    pictureBoxEmployee.Image = Properties.Resources.sotr;
+                    break; }
+                case 1: { pictureBoxProvider.Image = Properties.Resources.delivery_icon_cur;
+                    pictureBoxClient.Image = Properties.Resources.client;
+                    pictureBoxProduct.Image = Properties.Resources.tovar;
+                    pictureBoxEmployee.Image = Properties.Resources.sotr;
+                    break; }
+                case 2: { pictureBoxProduct.Image = Properties.Resources.tovar_cur;
+                    pictureBoxClient.Image = Properties.Resources.client;
+                    pictureBoxProvider.Image = Properties.Resources.delivery_icon_co;
+                    pictureBoxEmployee.Image = Properties.Resources.sotr;
+                    break; }
+                case 3: { pictureBoxEmployee.Image = Properties.Resources.sotr_cur;
+                    pictureBoxClient.Image = Properties.Resources.client;
+                    pictureBoxProvider.Image = Properties.Resources.delivery_icon_co;
+                    pictureBoxProduct.Image = Properties.Resources.tovar;
+                    break; }
+            }
+        }
+
+        private void pictureBoxClient_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBoxClient.Image = Properties.Resources.clientClick;
+        }
+
+        private void pictureBoxClient_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBoxClient.Image = Properties.Resources.client_cur;
+        }
+
+        private void pictureBoxProvider_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBoxProvider.Image = Properties.Resources.delivery_icon_coClick;
+        }
+
+        private void pictureBoxProvider_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBoxProvider.Image = Properties.Resources.delivery_icon_cur;
+        }
+
+        private void pictureBoxProduct_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBoxProduct.Image = Properties.Resources.tovarClick;
+        }
+
+        private void pictureBoxProduct_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBoxProduct.Image = Properties.Resources.tovar_cur;
+        }
+
+        private void pictureBoxEmployee_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBoxEmployee.Image = Properties.Resources.sotrClick;
+        }
+
+        private void pictureBoxEmployee_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBoxEmployee.Image = Properties.Resources.sotr_cur;
+        }
+
 
     }
 }

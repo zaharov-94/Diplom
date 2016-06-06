@@ -29,74 +29,92 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.diplomDataSet = new Diplom.DiplomDataSet();
+            this.dataSetReports = new Diplom.DataSetReports();
             this.ostatokBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sumProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersTableAdapter = new Diplom.DiplomDataSetTableAdapters.OrdersTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.diplomDataSet)).BeginInit();
+            this.ostatokTableAdapter = new Diplom.DataSetReportsTableAdapters.OstatokTableAdapter();
+            this.tableAdapterManager = new Diplom.DataSetReportsTableAdapters.TableAdapterManager();
+            this.ostatokDataGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ostatokBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sumProdBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ostatokDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // dataSetReports
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(156, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Домашняя";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(290, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(290, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // diplomDataSet
-            // 
-            this.diplomDataSet.DataSetName = "DiplomDataSet";
-            this.diplomDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataSetReports.DataSetName = "DataSetReports";
+            this.dataSetReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ostatokBindingSource
             // 
-            this.ostatokBindingSource.DataSource = this.diplomDataSet;
-            this.ostatokBindingSource.Position = 0;
+            this.ostatokBindingSource.DataMember = "Ostatok";
+            this.ostatokBindingSource.DataSource = this.dataSetReports;
             // 
-            // sumProdBindingSource
+            // ostatokTableAdapter
             // 
-            this.sumProdBindingSource.DataSource = this.diplomDataSet;
-            this.sumProdBindingSource.Position = 0;
+            this.ostatokTableAdapter.ClearBeforeFill = true;
             // 
-            // ordersTableAdapter
+            // tableAdapterManager
             // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.ProductsTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Diplom.DataSetReportsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // ostatokDataGridView
+            // 
+            this.ostatokDataGridView.AllowUserToAddRows = false;
+            this.ostatokDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ostatokDataGridView.AutoGenerateColumns = false;
+            this.ostatokDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ostatokDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ostatokDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.ostatokDataGridView.DataSource = this.ostatokBindingSource;
+            this.ostatokDataGridView.Enabled = false;
+            this.ostatokDataGridView.Location = new System.Drawing.Point(12, 42);
+            this.ostatokDataGridView.Name = "ostatokDataGridView";
+            this.ostatokDataGridView.RowHeadersVisible = false;
+            this.ostatokDataGridView.Size = new System.Drawing.Size(187, 283);
+            this.ostatokDataGridView.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(25, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Остатки товаров";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "razn";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Количество, ед";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 348);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(481, 356);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.ostatokDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -105,9 +123,9 @@
             this.ShowInTaskbar = false;
             this.Text = "Домашняя";
             this.Load += new System.EventHandler(this.Home_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.diplomDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ostatokBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sumProdBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ostatokDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,13 +133,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private DiplomDataSet diplomDataSet;
+        private DataSetReports dataSetReports;
         private System.Windows.Forms.BindingSource ostatokBindingSource;
-        private System.Windows.Forms.BindingSource sumProdBindingSource;
-        private DiplomDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
+        private DataSetReportsTableAdapters.OstatokTableAdapter ostatokTableAdapter;
+        private DataSetReportsTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView ostatokDataGridView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+
 
     }
 }

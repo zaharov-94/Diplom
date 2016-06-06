@@ -300,6 +300,57 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\client_cur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\delivery_icon_co.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\sotr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\tovar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\delivery_icon_cur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\sotr_cur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\tovar_cur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\clientClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\delivery_icon_coClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\sotrClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\tovarClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\homeClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\sale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\saleClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

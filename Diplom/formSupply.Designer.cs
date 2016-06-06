@@ -72,21 +72,28 @@
             // 
             // providerIDLabel
             // 
+            providerIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             providerIDLabel.AutoSize = true;
             providerIDLabel.Location = new System.Drawing.Point(147, 95);
             providerIDLabel.Name = "providerIDLabel";
-            providerIDLabel.Size = new System.Drawing.Size(62, 13);
+            providerIDLabel.Size = new System.Drawing.Size(65, 13);
             providerIDLabel.TabIndex = 9;
-            providerIDLabel.Text = "provider ID:";
+            providerIDLabel.Text = "Поставщик";
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(232, 65);
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(167, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(169, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Supply";
+            this.label1.Text = "Заказать товары";
             // 
             // diplomDataSet
             // 
@@ -142,7 +149,11 @@
             // 
             // SupplyProductsDataGridView
             // 
+            this.SupplyProductsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SupplyProductsDataGridView.AutoGenerateColumns = false;
+            this.SupplyProductsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.SupplyProductsDataGridView.CausesValidation = false;
             this.SupplyProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SupplyProductsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -163,7 +174,7 @@
             // 
             this.dataGridViewTextBoxColumn3.DataSource = this.productsBindingSource2;
             this.dataGridViewTextBoxColumn3.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn3.HeaderText = "productID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Товар";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -177,7 +188,7 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "count";
-            this.dataGridViewTextBoxColumn4.HeaderText = "count";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Количество";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // price
@@ -206,6 +217,7 @@
             // 
             // buttonAddSupply
             // 
+            this.buttonAddSupply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAddSupply.Location = new System.Drawing.Point(409, 233);
             this.buttonAddSupply.Name = "buttonAddSupply";
             this.buttonAddSupply.Size = new System.Drawing.Size(75, 23);
@@ -225,6 +237,7 @@
             // 
             // labelCount
             // 
+            this.labelCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCount.AutoSize = true;
             this.labelCount.Location = new System.Drawing.Point(277, 233);
             this.labelCount.Name = "labelCount";
@@ -234,6 +247,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(194, 233);
             this.label2.Name = "label2";
@@ -251,6 +265,9 @@
             // 
             // providerIDComboBox
             // 
+            this.providerIDComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.providerIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providersBindingSource, "providerID", true));
             this.providerIDComboBox.DataSource = this.providersBindingSource;
             this.providerIDComboBox.DisplayMember = "name";
@@ -279,7 +296,7 @@
             this.Controls.Add(this.SupplyProductsDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formSupply";
-            this.Text = "formSupply";
+            this.Text = "Заказ товаров";
             this.Load += new System.EventHandler(this.formSupply_Load);
             ((System.ComponentModel.ISupportInitialize)(this.diplomDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuppliesBindingSource)).EndInit();
@@ -320,12 +337,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.BindingSource providersBindingSource;
         private DiplomDataSetTableAdapters.ProvidersTableAdapter providersTableAdapter;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource productsBindingSource2;
+        private DiplomDataSetTableAdapters.SupplyProductsTableAdapter supplyProductsTableAdapter1;
+        private System.Windows.Forms.ComboBox providerIDComboBox;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
-        private DiplomDataSetTableAdapters.SupplyProductsTableAdapter supplyProductsTableAdapter1;
-        private System.Windows.Forms.ComboBox providerIDComboBox;
     }
 }

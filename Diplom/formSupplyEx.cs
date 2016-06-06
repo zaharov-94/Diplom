@@ -105,5 +105,14 @@ namespace Diplom
 
         }
 
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            ((mainForm)MdiParent).toolStripStatusLabel.Text = "Загрузка формы...";
+            ((mainForm)MdiParent).Refresh();
+            formSupply s = new formSupply();
+            s.MdiParent = this.MdiParent;
+            s.Show();
+        }
+
     }
 }

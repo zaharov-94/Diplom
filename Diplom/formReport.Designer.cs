@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.OstatokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetReports = new Diplom.DataSetReports();
             this.OrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -143,9 +143,9 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSet";
-            reportDataSource2.Value = this.OstatokBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet";
+            reportDataSource1.Value = this.OstatokBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "Diplom.Reports.Report1.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(164, 35);
             this.reportViewer.Name = "reportViewer";
@@ -162,7 +162,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formReport";
-            this.Text = "formReport";
+            this.Text = "Отчеты";
             this.Load += new System.EventHandler(this.formReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OstatokBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetReports)).EndInit();

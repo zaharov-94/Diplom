@@ -55,7 +55,6 @@
             this.clientsTableAdapter = new Diplom.DiplomDataSetTableAdapters.ClientsTableAdapter();
             this.labelCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelUser = new System.Windows.Forms.Label();
             clientIDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.diplomDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
@@ -70,21 +69,28 @@
             // 
             // clientIDLabel
             // 
+            clientIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             clientIDLabel.AutoSize = true;
-            clientIDLabel.Location = new System.Drawing.Point(151, 91);
+            clientIDLabel.Location = new System.Drawing.Point(151, 64);
             clientIDLabel.Name = "clientIDLabel";
-            clientIDLabel.Size = new System.Drawing.Size(49, 13);
+            clientIDLabel.Size = new System.Drawing.Size(43, 13);
             clientIDLabel.TabIndex = 4;
-            clientIDLabel.Text = "client ID:";
+            clientIDLabel.Text = "Клиент";
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(219, 50);
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(149, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(178, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "order";
+            this.label1.Text = "Добавление заказа";
             // 
             // diplomDataSet
             // 
@@ -124,13 +130,16 @@
             // 
             // clientIDComboBox
             // 
+            this.clientIDComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.clientIDComboBox.CausesValidation = false;
             this.clientIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordersBindingSource, "clientID", true));
             this.clientIDComboBox.DataSource = this.clientsBindingSource;
             this.clientIDComboBox.DisplayMember = "name";
             this.clientIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clientIDComboBox.FormattingEnabled = true;
-            this.clientIDComboBox.Location = new System.Drawing.Point(206, 88);
+            this.clientIDComboBox.Location = new System.Drawing.Point(206, 61);
             this.clientIDComboBox.Name = "clientIDComboBox";
             this.clientIDComboBox.Size = new System.Drawing.Size(121, 21);
             this.clientIDComboBox.TabIndex = 5;
@@ -155,7 +164,11 @@
             // 
             // orderProductsDataGridView
             // 
+            this.orderProductsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.orderProductsDataGridView.AutoGenerateColumns = false;
+            this.orderProductsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.orderProductsDataGridView.CausesValidation = false;
             this.orderProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderProductsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -166,10 +179,10 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.orderProductsDataGridView.DataSource = this.orderProductBindingSource;
-            this.orderProductsDataGridView.Location = new System.Drawing.Point(22, 129);
+            this.orderProductsDataGridView.Location = new System.Drawing.Point(22, 112);
             this.orderProductsDataGridView.Name = "orderProductsDataGridView";
             this.orderProductsDataGridView.RowHeadersVisible = false;
-            this.orderProductsDataGridView.Size = new System.Drawing.Size(462, 84);
+            this.orderProductsDataGridView.Size = new System.Drawing.Size(462, 101);
             this.orderProductsDataGridView.TabIndex = 6;
             this.orderProductsDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.orderProductsDataGridView_CellBeginEdit);
             this.orderProductsDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderProductsDataGridView_CellEndEdit);
@@ -178,7 +191,7 @@
             // 
             this.dataGridViewTextBoxColumn3.DataSource = this.productsBindingSource1;
             this.dataGridViewTextBoxColumn3.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn3.HeaderText = "productID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Товар";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -192,7 +205,7 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "count";
-            this.dataGridViewTextBoxColumn4.HeaderText = "count";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Количество";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // price
@@ -231,6 +244,7 @@
             // 
             // buttonAddOrder
             // 
+            this.buttonAddOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAddOrder.Location = new System.Drawing.Point(409, 228);
             this.buttonAddOrder.Name = "buttonAddOrder";
             this.buttonAddOrder.Size = new System.Drawing.Size(75, 23);
@@ -250,6 +264,7 @@
             // 
             // labelCount
             // 
+            this.labelCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCount.AutoSize = true;
             this.labelCount.Location = new System.Drawing.Point(277, 228);
             this.labelCount.Name = "labelCount";
@@ -259,6 +274,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(194, 228);
             this.label2.Name = "label2";
@@ -266,22 +282,12 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Общая цена:";
             // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(362, 37);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(35, 13);
-            this.labelUser.TabIndex = 10;
-            this.labelUser.Text = "label3";
-            // 
             // formOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(505, 277);
-            this.Controls.Add(this.labelUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelCount);
             this.Controls.Add(this.buttonAddOrder);
@@ -291,7 +297,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formOrder";
-            this.Text = "formOrder";
+            this.Text = "Добавление заказа";
             this.Load += new System.EventHandler(this.formOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.diplomDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
@@ -334,6 +340,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Label labelUser;
     }
 }

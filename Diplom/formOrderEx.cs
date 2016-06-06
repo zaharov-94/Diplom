@@ -107,5 +107,15 @@ namespace Diplom
             DataGridPrice();
         }
 
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            
+            ((mainForm)MdiParent).toolStripStatusLabel.Text = "Загрузка формы...";
+            ((mainForm)MdiParent).Refresh();
+            formOrder o = new formOrder();
+            o.MdiParent =  this.MdiParent;
+            o.Show();
+        }
+
     }
 }

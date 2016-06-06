@@ -203,6 +203,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -497,7 +498,7 @@
             this.Controls.Add(this.ordersBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formOrderEx";
-            this.Text = "formOrderEx";
+            this.Text = "Заказы";
             this.Load += new System.EventHandler(this.formOrderEx_Load);
             ((System.ComponentModel.ISupportInitialize)(this.diplomDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();

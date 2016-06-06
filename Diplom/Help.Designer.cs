@@ -28,35 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.listBox = new System.Windows.Forms.ListBox();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // label1
+            // listBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Help";
+            this.listBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(0, 0);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(136, 321);
+            this.listBox.TabIndex = 0;
+            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
+            // 
+            // webBrowser
+            // 
+            this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser.Location = new System.Drawing.Point(136, 0);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(379, 321);
+            this.webBrowser.TabIndex = 1;
             // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(515, 321);
+            this.Controls.Add(this.webBrowser);
+            this.Controls.Add(this.listBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Help";
-            this.Text = "Help";
+            this.Text = "Справка";
             this.Load += new System.EventHandler(this.Help_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.WebBrowser webBrowser;
+
     }
 }

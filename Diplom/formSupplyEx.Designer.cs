@@ -305,6 +305,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -485,7 +486,7 @@
             this.Controls.Add(this.SupplyIDLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formSupplyEx";
-            this.Text = "formSupplyEx";
+            this.Text = "Поставки товаров";
             this.Load += new System.EventHandler(this.formSupplyEx_Load);
             this.TextChanged += new System.EventHandler(this.SupplyIDTextBox_TextChanged);
             this.panel1.ResumeLayout(false);

@@ -34,7 +34,6 @@ namespace Diplom
             this.ordersTableAdapter.Fill(this.diplomDataSet.Orders);
             this.ShowIcon = false;
             this.WindowState = FormWindowState.Maximized;
-            labelUser.Text = Settings.userName;
             ((mainForm)MdiParent).toolStripStatusLabel.Text = "Готово";
         }
         Context db = new Context();
